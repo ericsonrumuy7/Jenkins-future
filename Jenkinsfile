@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label "dockerworker"
+    }
     stages {
         stage('Build') {
             steps {
@@ -16,9 +18,14 @@ pipeline {
                 }
             }
         }
-        stage('Deliver') {
+        stage('Build image') {
             steps {
-                sh 'sh jenkins/scripts/deliver.sh'
+                sh 'docker build -t my-app'
+            }
+        }
+        stage('Run app') {
+            steps {
+                sh 'docker run my-app'
             }
         }
     }
