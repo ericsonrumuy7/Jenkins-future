@@ -1,2 +1,2 @@
-@Library('jenkins-libs@master') _
+@Library('library-test@master') _
 deliveryPipeline()
