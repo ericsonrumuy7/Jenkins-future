@@ -1,2 +1,4 @@
 @Library('library-test@master') _
-deliveryPipeline()
+deliveryPipeline(
+  text: "Hello World"
+)
