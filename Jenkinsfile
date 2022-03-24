@@ -3,7 +3,7 @@ pipeline{
     stages {
     stage('Build') {
         steps{
-            sh'makemvn -B -DskipTests clean package'
+            sh'make mvn -B -DskipTests clean package'
         }
         }
         stage('Test'){
